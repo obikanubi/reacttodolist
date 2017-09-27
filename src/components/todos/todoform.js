@@ -7,22 +7,26 @@ class TodoForm extends Component {
       text: ''
     }
   }
-  addTodo() {
-    console.log('clicked')
-  }
 
   updateText(event) {
-    console.log('updateText');
-    console.log(event.target.value);
+    //console.log('updateText');
+    //console.log(event.target.value);
     this.setState({
       text: event.target.value
+    })
+  }
+
+  addTodo() {
+    this.props.addNewTodoFunc(this.state.text)
+    this.setState({
+      text: ''
     })
   }
 
   render() {
     return (
       <div>
-          <input onChange={(event) => this.updateText(event)} value={this.state.text} placeholder="Add Todo" />
+          <input onChange={(event) => this.updateText(event)} value={this.state.text} placeholder="Add New To Do" />
           <button onClick={() => this.addTodo()}>Add Todo</button>
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Todo from './todo';
+
 
 class TodoList extends Component {
   render() {
@@ -8,7 +8,7 @@ class TodoList extends Component {
       <div>
         <ul>
           {this.props.todos.map((todo, i) =>
-            <Todo key={i} todo={todo}/>
+            <li key={i}>{todo}</li>
           )}
         </ul>
       </div>

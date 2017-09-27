@@ -11,11 +11,18 @@ class App extends Component {
     }
   }
 
+  addNewTodo(todo) {
+    console.log(todo)
+    this.setState({
+      todos: this.state.todos.concat(todo)
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <h1>My Todos</h1>
-        <TodoForm />
+        <TodoForm addNewTodoFunc={this.addNewTodo.bind(this)}/>
         <TodoList todos={this.state.todos} />
       </div>
     );
